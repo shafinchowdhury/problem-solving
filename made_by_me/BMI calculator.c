@@ -52,23 +52,33 @@ int main()
     float lose = weight - (25.0 *(height*height));
     int limit_1 = (18.5 *(height*height));
     int limit_2 = (25.0 *(height*height));
+    int avarage = (limit_1 + limit_2)/2;
 
     printf("Condition: ");
     if(bmi < 18.5){
         printf("Underweight\n");
         printf("You should gain at lest %0.1f kg weight\n",gain);
+        if(avarage != weight){
+            printf("But better to maintain around %d kgs\n",avarage);
+        }
     }
     else if(bmi >= 18.5 & bmi <= 25){
         printf("Healthy Weight\n");
-        printf("Just maintain your weight from %d to %d\n",limit_1, limit_2);
+        printf("Just maintain your weight from %d to %d . But better to maintain around %d kgs\n",limit_1, limit_2,avarage);
     }
     else if(bmi > 25.0 & bmi <= 30){
         printf("Overweight\n");
         printf("You should lose at lest %0.1f kg weight\n",lose);
+        if(avarage != weight){
+            printf("But better to maintain around %d kgs\n",avarage);
+        }
     }
     else if(bmi > 30 & bmi <= 39.9){
         printf("Obesity\n");
         printf("You should lose at lest %0.1f kg weight\n",lose);
+        if(avarage != weight){
+            printf("But better to maintain around %d kgs\n",avarage);
+        }
     }
     else{
         printf("Obesity and over risk level\n");
